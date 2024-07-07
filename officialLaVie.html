@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Translation</title>
+    <style>
+        .hover-word {
+            cursor: pointer;
+            margin: 0 2px;
+            position: relative;
+        }
+        .hover-word::after {
+            content: attr(title);
+            position: absolute;
+            background-color: yellow;
+            padding: 2px;
+            border-radius: 3px;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+            white-space: nowrap;
+            z-index: 1;
+        }
+        .hover-word:hover::after,
+        .hover-word:focus::after {
+            display: block;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #video-container {
+            width: 320px;
+            height: 180px;
+            background-color: black;
+        }
+        #text-container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+        }
+        @media (min-width: 768px) {
+            body {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+            #video-container {
+                position: fixed;
+                right: 0;
+                top: 0;
+            }
+            #text-container {
+                margin-right: 340px; /* width of video + some margin */
+            }
+        }
+    </style>
+   
+</head>
+<body>
+
+    <div id="video-container">
+        <iframe id="player" width="320" height="180" src="https://www.youtube.com/embed/eUg6BRULIt4?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div id="text-container">
+        <h1>La Vie En Rose</h1>
+        <p>
+            <span class="hover-word" title="Some">Des</span>
+            <span class="hover-word" title="eyes">yeux</span>
+            <span class="hover-word" title="that">qui</span>
+            <span class="hover-word" title="make">font</span>
+            <span class="hover-word" title="lower">baisser</span>
+            <span class="hover-word" title="the">les</span>
+            <span class="hover-word" title="mine">miens</span>
+        </p>
+        <p>
+            <span class="hover-word" title="A">Un</span>
+            <span class="hover-word" title="laugh">rire</span>
+            <span class="hover-word" title="that">qui</span>
+            <span class="hover-word" title="is lost">se perd</span>
+            <span class="hover-word" title="on her mouth">sur sa bouche</span>
+        </p>
+        <p>
+            <span class="hover-word" title="Here is">Voilà</span>
+            <span class="hover-word" title="the portrait">le portrait</span>
+            <span class="hover-word" title="without retouch">sans retouches</span>
+        </p>
+        <p>
+            <span class="hover-word" title="Of the man">De l'homme</span>
+            <span class="hover-word" title="to whom">auquel</span>
+            <span class="hover-word" title="I belong">j'appartiens</span>
+        </p>
+        <p>
+            <span class="hover-word" title="When">Quand</span>
+            <span class="hover-word" title="he">il</span>
+            <span class="hover-word" title="takes me">me prend</span>
+            <span class="hover-word" title="in his arms">dans ses bras</span>
+        </p>
+        <p>
+            <span class="hover-word" title="He speaks">Il me parle</span>
+            <span class="hover-word" title="softly">tout bas</span>
+        </p>
+        <p>
+            <span class="hover-word" title="I see">Je vois</span>
+            <span class="hover-word" title="life">la vie</span>
+            <span class="hover-word" title="in pink">en rose</span>
+        </p>
+        <p>
+            <span class="hover-word" title="He says">Il me dit</span>
+            <span class="hover-word" title="words">des mots</span>
+            <span class="hover-word" title="of love">d'amour</span>
+        </p>
+        <p>
+            <span class="hover-word" title="Everyday words">Des mots de tous les jours</span>
+        </p>
+        <p>
+            <span class="hover-word" title="And it">Et ça</span>
+            <span class="hover-word" title="does something to me">m'fait quelque chose</span>
+        </p>
+        <p>
+            <span class="hover-word" title="He entered">Il est entré</span>
+            <span class="hover-word" title="in my heart">dans mon cœur</span>
+        </p>
+        <p>
+            <span class="hover-word" title="A part">Une part</span>
+            <span class="hover-word" title="of happiness">de bonheur</span>
+        </p>
+        <p>
+            <span class="hover-word" title="That I know the cause">Dont je connais la cause</span>
+        </p>
+        <p>
+            <span class="hover-word" title="It's him for me">C'est lui pour moi</span>
+            <span class="hover-word" title="me for him">moi pour lui</span>
+            <span class="hover-word" title="in life">dans la vie</span>
+        </p>
+        <p>
+            <span class="hover-word" title="He told me">Il me l'a dit</span>
+            <span class="hover-word" title="swore to me">l'a juré</span>
+            <span class="hover-word" title="for life">pour la vie</span>
+        </p>
+        <p>
+            <span class="hover-word" title="And as soon as">Et dès que</span>
+            <span class="hover-word" title="I see him">je l'aperçois</span>
+        </p>
+        <p>
+            <span class="hover-word" title="Then">Alors</span>
+            <span class="hover-word" title="I feel">je sens</span>
+            <span class="hover-word" title="inside me">dans moi</span>
+            <span class="hover-word" title="My heart">mon cœur</span>
+            <span class="hover-word" title="beating">qui bat</span>
+        </p>
+        <p>
+            <span class="hover-word" title="Nights of love">Des nuits d'amour</span>
+            <span class="hover-word" title="without end">à plus finir</span>
+        </p>
+        <p>
+            <span class="hover-word" title="A great happiness">Un grand bonheur</span>
+            <span class="hover-word" title="that takes">qui prend</span>
+            <span class="hover-word" title="its place">sa place</span>
+        </p>
+        <p>
+            <span class="hover-word" title="Troubles, sorrows">Des ennuis, des chagrins</span>
+            <span class="hover-word" title="fade away">s'effacent</span>
+        </p>
+        <p>
+            <span class="hover-word" title="Happy, happy">Heureux, heureux</span>
+            <span class="hover-word" title="to death">à en mourir</span>
+        </p>
+        <p>
+            <span class="hover-word" title="When">Quand</span>
+            <span class="hover-word" title="he takes me">il me prend</span>
+            <span class="hover-word" title="in his arms">dans ses bras</span>
+        </p>
+        <p>
+            <span class="hover-word" title="He speaks">Il me parle</span>
+            <span class="hover-word" title="softly">tout bas</span>
+        </p>
+        <p>
+            <span class="hover-word" title="I see">Je vois</span>
+            <span class="hover-word" title="life in pink">la vie en rose</span>
+        </p>
+        <p>
+            <span class="hover-word" title="He says">Il me dit</span>
+            <span class="hover-word" title="words">des mots</span>
+            <span class="hover-word" title="of love">d'amour</span>
+        </p>
+        <p>
+            <span class="hover-word" title="Everyday words">Des mots de tous les jours</span>
+        </p>
+        <p>
+            <span class="hover-word" title="And it does">Et ça</span>
+            <span class="hover-word" title="something to me">m'fait quelque chose</span>
+        </p>
+        <p>
+            <span class="hover-word" title="He entered">Il est entré</span>
+            <span class="hover-word" title="in my heart">dans mon cœur</span>
+        </p>
+        <p>
+            <span class="hover-word" title="A part">Une part</span>
+            <span class="hover-word" title="of happiness">de bonheur</span>
+        </p>
+        <p>
+            <span class="hover-word" title="That I know the cause">Dont je connais la cause</span>
+        </p>
+        <p>
+            <span class="hover-word" title="It's him for me">C'est toi pour moi</span>
+            <span class="hover-word" title="me for him">moi pour toi</span>
+            <span class="hover-word" title="in life">dans la vie</span>
+        </p>
+        <p>
+            <span class="hover-word" title="He told me">Tu me l'as dit</span>
+            <span class="hover-word" title="swore to me">l'a juré</span>
+            <span class="hover-word" title="for life">pour la vie</span>
+        </p>
+        <p>
+            <span class="hover-word" title="And as soon as">Et dès que</span>
+            <span class="hover-word" title="I see him">je t'aperçois</span>
+        </p>
+        <p>
+            <span class="hover-word" title="Then I feel">Alors je sens</span>
+            <span class="hover-word" title="inside me">dans moi</span>
+            <span class="hover-word" title="my heart beating">mon cœur qui bat</span>
+        </p>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        var player;
+        var lyrics = [
+            { time: 13, element: null }, //1 Des
+            { time: 13, element: null }, //2 yeux
+            { time: 13, element: null }, //3 qui
+            { time: 13, element: null }, //4 font
+            { time: 13, element: null }, //5 baisser
+            { time: 13, element: null }, //6
+            { time: 13, element: null }, //7
+            { time: 16, element: null }, //8 n rire
+            { time: 16, element: null }, //9
+            { time: 17, element: null }, //10
+            { time: 17, element: null }, //11
+            { time: 17, element: null }, //12 n 
+            { time: 19, element: null }, //13 Voilà
+            { time: 19, element: null }, //14
+            { time: 19, element: null }, //15
+            { time: 22, element: null }, //16 De l'homme 
+            { time: 22, element: null }, //17
+            { time: 23, element: null }, //18
+            { time: 26, element: null }, //19  n Quand
+            { time: 27, element: null }, //20
+            { time: 28, element: null }, //21
+            { time: 29, element: null }, //22
+            { time: 31, element: null }, //23 Il me parle 
+            { time: 31, element: null }, //24 tout bas
+            { time: 34, element: null }, //25 Je vois
+            { time: 34, element: null }, //26 la vie
+            { time: 35, element: null }, //27  en rose
+            { time: 38.5, element: null }, //28 * Il me dit
+            { time: 40, element: null }, //29 des mots
+            { time: 41, element: null }, //30 d'amour
+            { time: 42, element: null }, //31 * Des mots de tous les jours
+
+            { time: 45, element: null }, //32 * Et ça
+            { time: 46, element: null }, //33 m'fait quelque chose
+
+            { time: 50, element: null }, //34 * Il est entré
+            { time: 52, element: null }, //35 dans mon cœur
+            
+            { time: 54, element: null }, //36 *Une part
+            { time: 55, element: null }, //37 de bonheur
+
+            { time: 57, element: null }, //38 *Dont je connais la cause
+
+            { time: 61, element: null }, //39 *C'est lui pour moi
+            { time: 63, element: null }, //40 moi pour lui
+            { time: 64, element: null }, //41 dans la vie
+
+            { time: 67, element: null }, //42*Il me l'a dit
+            { time: 68.5, element: null }, //43 l'a juré
+            { time: 70, element: null },//44 pour la vie
+
+            { time: 75, element: null },//45 *Et dès que
+            { time: 77, element: null },//46 je l'aperçois
+
+            { time: 79, element: null },//47*Alors
+            { time: 80, element: null },//48 je sens
+            { time: 81, element: null },//49 dans moi
+            { time: 82.5, element: null },//50 mon cœur
+            { time: 85, element: null },//51 qui bat
+
+            { time: 88, element: null },//52* Des nuits d'amour
+            { time: 89, element: null },//53 à plus finir
+
+            { time: 90.5, element: null },//54 * Un grand bonheur
+            { time: 92, element: null },//55 qui prend
+            { time: 92, element: null },//56 sa place
+
+            { time: 94, element: null },//57 * Des ennuis, des chagrins
+            { time: 95, element: null },//58 s'effacent
+
+            { time: 97, element: null },//59 * Heureux, heureux
+            { time: 98, element: null },//60 à en mourir
+
+            { time: 300, element: null },//61 * Quand
+            { time: 305, element: null },//62 il me prend
+            { time: 310, element: null },//63 dans ses bras
+
+            { time: 315, element: null },//64* Il me parle
+            { time: 320, element: null },//65 tout bas
+
+            { time: 325, element: null },//66 * Je vois
+            { time: 330, element: null },//67 la vie en rose
+
+            { time: 335, element: null },//68 * Il me dit
+            { time: 340, element: null },//69 des mots
+            { time: 345, element: null },//70 d'amour
+
+            { time: 350, element: null },//71* Des mots de tous les jours
+            { time: 355, element: null },//72 Et ça
+            { time: 360, element: null },//73 m'fait quelque chose
+            { time: 355, element: null },//74
+            { time: 355, element: null },//75
+            { time: 355, element: null }, //76
+            { time: 355, element: null },//77
+            { time: 355, element: null },//78
+            { time: 355, element: null },//79
+            { time: 355, element: null },//80
+            { time: 355, element: null }
+
+        ];
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            setInterval(updateLyricsHighlight, 100);
+        }
+
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING) {
+                setInterval(updateLyricsHighlight, 100);
+            }
+        }
+
+        function updateLyricsHighlight() {
+            var currentTime = player.getCurrentTime();
+            lyrics.forEach(function(lyric) {
+                if (currentTime >= lyric.time) {
+                    lyric.element.classList.add('highlight');
+                } else {
+                    lyric.element.classList.remove('highlight');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var elements = document.querySelectorAll('.hover-word');
+            elements.forEach(function(element, index) {
+                if (lyrics[index]) {
+                    lyrics[index].element = element;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
